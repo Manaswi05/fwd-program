@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PathForge -- Career Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<!-- HERO -->
+<div class="screen active" id="s-hero">
+  <div class="hero-wrap">
+    <div class="hero-left">
+      <div class="badge"><span class="bdot"></span>Career Intelligence Engine</div>
+      <h1 class="hero-title">Forge Your<br><span class="grad">Career Path</span></h1>
+      <p class="hero-sub">Answer 6 quick questions and get a fully personalised roadmap across 60+ careers -- with milestones, skills, salaries & resources.</p>
+      <div class="cta-row">
+        <button class="btn-p" id="startBtn">Begin Journey →</button>
+        <button class="btn-g" id="exploreBtn">Explore All Careers</button>
+      </div>
+      <div class="stats">
+        <div class="stat"><span class="snum">60+</span><span class="slabel">Careers</span></div>
+        <div class="sdiv"></div>
+        <div class="stat"><span class="snum">500+</span><span class="slabel">Milestones</span></div>
+        <div class="sdiv"></div>
+        <div class="stat"><span class="snum">300+</span><span class="slabel">Resources</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="orb o1"></div>
+      <div class="orb o2"></div>
+      <div class="orb o3"></div>
+      <div class="fc">💻 Software Engineer</div>
+      <div class="fc">⚖️ Lawyer</div>
+      <div class="fc">🎮 Game Developer</div>
+      <div class="fc">📊 Data Scientist</div>
+      <div class="fc">🎨 UX Designer</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div class="screen" id="s-quiz">
+  <div class="quiz-box">
+    <div class="qheader">
+      <button class="back-btn" id="qBackBtn">← Back</button>
+      <div class="prog-wrap"><div class="prog-fill" id="progFill"></div></div>
+      <span class="step-ctr" id="stepCtr">1 / 6</span>
+    </div>
+    <div class="qstep active" id="step1">
+      <div class="step-icon">👤</div>
+      <h2 class="step-title">What's your name?</h2>
+      <p class="step-sub">Let's make this personal.</p>
+      <input class="q-input" id="nameInput" placeholder="Your first name..." maxlength="30" autocomplete="off"/>
+      <button class="btn-p" id="n1">Continue →</button>
+    </div>
+    <div class="qstep" id="step2">
+      <div class="step-icon">🎓</div>
+      <h2 class="step-title">Your current stage?</h2>
+      <p class="step-sub">Helps calibrate your timeline.</p>
+      <div class="opt-grid" id="eduGrid">
+        <div class="opt" data-v="highschool">🏫<span>High School</span></div>
+        <div class="opt" data-v="undergrad">📚<span>Undergrad</span></div>
+        <div class="opt" data-v="graduate">🎓<span>Graduate</span></div>
+        <div class="opt" data-v="working">💼<span>Working Pro</span></div>
+        <div class="opt" data-v="changer">🔄<span>Career Changer</span></div>
+      </div>
+      <button class="btn-p" id="n2">Continue →</button>
+    </div>
+    <div class="qstep" id="step3">
+      <div class="step-icon">🔥</div>
+      <h2 class="step-title">Your top interests?</h2>
+      <p class="step-sub">Pick up to 3.</p>
+      <div class="int-grid" id="intGrid">
+        <div class="itag" data-v="technology">💻 Technology</div>
+        <div class="itag" data-v="arts">🎨 Arts & Design</div>
+        <div class="itag" data-v="science">🔬 Science</div>
+        <div class="itag" data-v="business">📈 Business</div>
+        <div class="itag" data-v="healthcare">🏥 Healthcare</div>
+        <div class="itag" data-v="law">⚖️ Law</div>
+        <div class="itag" data-v="sports">🏆 Sports</div>
+        <div class="itag" data-v="education">📖 Education</div>
+        <div class="itag" data-v="trades">🔧 Trades</div>
+        <div class="itag" data-v="entertainment">🎬 Entertainment</div>
+      </div>
+      <button class="btn-p" id="n3">Continue →</button>
+    </div>
+    <div class="qstep" id="step4">
+      <div class="step-icon">🌍</div>
+      <h2 class="step-title">Preferred work style?</h2>
+      <p class="step-sub">How do you thrive best?</p>
+      <div class="opt-grid" id="wsGrid">
+        <div class="opt" data-v="remote">🏠<span>Remote</span></div>
+        <div class="opt" data-v="office">🏢<span>In-Office</span></div>
+        <div class="opt" data-v="field">🌿<span>Fieldwork</span></div>
+        <div class="opt" data-v="flexible">⚡<span>Flexible</span></div>
+      </div>
+      <button class="btn-p" id="n4">Continue →</button>
+    </div>
+    <div class="qstep" id="step5">
+      <div class="step-icon">⏳</div>
+      <h2 class="step-title">Time commitment?</h2>
+      <p class="step-sub">How long are you willing to invest?</p>
+      <div class="opt-grid" id="timeGrid">
+        <div class="opt" data-v="fast">⚡<span>1 Year Fast-Track</span></div>
+        <div class="opt" data-v="standard">📅<span>3-5 Years Standard</span></div>
+        <div class="opt" data-v="specialist">🏅<span>5+ Year Specialist</span></div>
+      </div>
+      <button class="btn-p" id="n5">Continue →</button>
+    </div>
+    <div class="qstep" id="step6">
+      <div class="step-icon">✨</div>
+      <h2 class="step-title">What drives you most?</h2>
+      <p class="step-sub">Your core motivator shapes your ideal path.</p>
+      <div class="opt-grid" id="motGrid">
+        <div class="opt" data-v="money">💰<span>Financial Reward</span></div>
+        <div class="opt" data-v="impact">🌱<span>Social Impact</span></div>
+        <div class="opt" data-v="creativity">🎨<span>Creativity</span></div>
+        <div class="opt" data-v="stability">🛡️<span>Stability</span></div>
+        <div class="opt" data-v="fame">⭐<span>Recognition</span></div>
+        <div class="opt" data-v="autonomy">🗽<span>Autonomy</span></div>
+      </div>
+      <button class="btn-p" id="submitBtn">Generate My Roadmap 🚀</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div class="screen" id="s-results">
+  <div class="res-wrap">
+    <div class="res-hdr">
+      <button class="back-btn" id="resBackBtn">← Retake Quiz</button>
+      <h2 class="res-title">Your Top Matches, <span id="resName">Friend</span></h2>
+      <p class="res-sub">Based on your profile -- click any card to view your full roadmap.</p>
+    </div>
+    <div class="matches-grid" id="matchGrid"></div>
+  </div>
+</div>
+
+<!-- ROADMAP -->
+<div class="screen" id="s-roadmap">
+  <div class="rm-wrap">
+    <div class="rm-hdr">
+      <button class="back-btn" id="rmBackBtn">← Back to Matches</button>
+      <div class="rm-title-block">
+        <span class="rm-emoji" id="rmEmoji"></span>
+        <h2 class="rm-title" id="rmTitle"></h2>
+      </div>
+      <button class="btn-g btn-sm" onclick="window.print()">⬇ Export PDF</button>
+    </div>
+    <div class="sal-bar" id="salBar"></div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</div>
+
+<!-- EXPLORE -->
+<div class="screen" id="s-explore">
+  <div class="exp-wrap">
+    <div class="exp-hdr">
+      <button class="back-btn" id="expBackBtn">← Home</button>
+      <h2 class="exp-title">Explore All Careers</h2>
+      <input class="srch" id="srchInput" placeholder="🔍 Search any career..."/>
+    </div>
+    <div class="cbrowser" id="cbrowser"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
